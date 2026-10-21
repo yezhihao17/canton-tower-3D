@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>广州塔 · Canton Tower | 3D 交互展示</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="css/style.css?v=15" />
-<script>window.__errors = []; addEventListener('error', (e) => window.__errors.push(`${e.message} @ ${e.filename}:${e.lineno}`)); addEventListener('unhandledrejection', (e) => window.__errors.push(String(e.reason)));</script>
+<link rel="stylesheet" href="css/style.css?v=25" />
 <script type="importmap">
 {
   "imports": {
@@ -44,6 +43,24 @@
     <button class="mode-btn is-active" data-mode="night"><span class="dot"></span>夜景</button>
     <button class="mode-btn" data-mode="day"><span class="dot"></span>白昼</button>
     <button class="mode-btn" data-mode="neon"><span class="dot"></span>霓虹</button>
+  </div>
+
+  <!-- 天气 -->
+  <div class="weather-panel" id="weatherPanel">
+    <span class="weather-label">WEATHER</span>
+    <button class="weather-btn is-active" data-weather="clear">晴朗</button>
+    <button class="weather-btn" data-weather="drizzle">细雨</button>
+    <button class="weather-btn" data-weather="storm">暴雨</button>
+    <button class="weather-btn" data-weather="fog">浓雾</button>
+  </div>
+
+  <!-- 点击跟随状态 -->
+  <div class="focus-chip" id="focusChip">
+    <span class="focus-dot"></span>
+    <span class="focus-state">跟随中</span>
+    <span class="focus-name" id="focusName">汽车</span>
+    <span class="focus-esc">ESC 退出</span>
+    <button class="focus-exit" id="focusExit">退出</button>
   </div>
 
   <!-- 左下：数据卡 -->
@@ -92,7 +109,7 @@
 
   <div class="env-tip" id="envTip">
     <span class="env-tip-dot"></span>
-    点击「江景」或「新城」查看珠江、车流与城市天际线
+    点击车辆 / 行人 / 船只跟随视角 · 切换「江景」「新城」查看城市
   </div>
 
   <!-- 右下：开关 -->
@@ -105,7 +122,7 @@
 
   <div class="hint">
     <span class="mouse"></span>
-    拖拽旋转 · 滚轮缩放 · 右键平移
+    拖拽旋转 · 滚轮缩放 · 点击汽车 / 行人 / 船只跟随
   </div>
 
   <div class="credit">
@@ -133,6 +150,6 @@
 <div class="vignette"></div>
 <div class="grain"></div>
 
-<script type="module" src="js/main.js?v=16"></script>
+<script type="module" src="src/main.js?v=25"></script>
 </body>
 </html>

@@ -2,8 +2,8 @@
 """
 Build the compact Zhujiang New Town scene dataset from OpenStreetMap extracts.
 
-Inputs are the raw Overpass JSON files in ../data (fetched with the queries
-documented in README/scripts). Output is ../js/city-data.js.
+Inputs are the raw Overpass JSON files in ../assets/data/raw (fetched with the
+queries documented in README). Output is ../src/data/city-data.js.
 
 Coordinate system: metres, x = east, z = south. Origin is the centre of the
 Canton Tower footprint (lon 113.3191506, lat 23.1090162). y is up.
@@ -18,8 +18,8 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-DATA = os.path.join(ROOT, "data")
-OUT = os.path.join(ROOT, "js", "city-data.js")
+DATA = os.path.join(ROOT, "assets", "data", "raw")
+OUT = os.path.join(ROOT, "src", "data", "city-data.js")
 
 LON0 = 113.3191506
 LAT0 = 23.1090162

@@ -5,9 +5,13 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 
-import { createTower } from './tower.js?v=15';
-import { createEnvironment } from './environment.js?v=15';
-import { CITY_DATA } from './city-data.js?v=15';
+import { createTower } from './scene/tower.js?v=25';
+import { createEnvironment } from './scene/environment.js?v=25';
+import { CITY_DATA } from './data/city-data.js?v=25';
+import { createFocus } from './systems/focus.js?v=25';
+import { createWeather, WEATHER_PRESETS } from './systems/weather.js?v=25';
+import { VIEWS } from './config/views.js?v=25';
+import { MODES } from './config/modes.js?v=25';
 
 /* ============================================================
    基础设置
@@ -94,6 +98,10 @@ composer.addPass(new OutputPass());
 const env = createEnvironment(scene, CITY_DATA);
 const tower = createTower();
 scene.add(tower.group);
+
+/* ---------- 天气 / 点击跟随 ---------- */
+const weather = createWeather({ scene, camera, env });
+const focus = createFocus({ scene, camera, controls, renderer, env });
 
 /* ============================================================
    结构标注
@@ -337,43 +345,6 @@ for (let m = 600; m >= 0; m -= 50) {
    镜头预设
    ============================================================ */
 
-const VIEWS = {
-  hero: {
-    pos: new THREE.Vector3(600, 470, 1180),
-    target: new THREE.Vector3(0, 260, -180),
-    fov: 40,
-  },
-  waist: {
-    pos: new THREE.Vector3(185, 285, -265),
-    target: new THREE.Vector3(0, 285, 0),
-    fov: 44,
-  },
-  deck: {
-    pos: new THREE.Vector3(150, 380, -240),
-    target: new THREE.Vector3(0, 370, 0),
-    fov: 42,
-  },
-  top: {
-    pos: new THREE.Vector3(185, 540, -285),
-    target: new THREE.Vector3(0, 505, 0),
-    fov: 44,
-  },
-  orbit: {
-    pos: new THREE.Vector3(1180, 760, 820),
-    target: new THREE.Vector3(30, 260, -720),
-    fov: 40,
-    mobile: {
-      pos: new THREE.Vector3(1700, 950, 1700),
-      target: new THREE.Vector3(0, 250, -700),
-      fov: 50,
-    },
-  },
-  city: {
-    pos: new THREE.Vector3(1300, 1080, 1500),
-    target: new THREE.Vector3(80, 120, -1900),
-    fov: 44,
-  },
-};
 
 let camTween = null;
 
@@ -402,122 +373,6 @@ const easeInOutCubic = (t) =>
    外观模式
    ============================================================ */
 
-const MODES = {
-  night: {
-    exposure: 1.05,
-    bloom: { strength: 0.58, radius: 0.55, threshold: 0.72 },
-    sky: { top: 0x030812, mid: 0x081a2b, bottom: 0x0e2838, glow: 0x2a6f8c },
-    fog: { color: 0x0e2838, density: 0.00013 },
-    ambient: { sky: 0x6fa8c4, ground: 0x04070b, intensity: 0.55 },
-    key: { color: 0x9fdcff, intensity: 1.1 },
-    keyPos: [180, 300, 200],
-    sunDir: [0.55, 0.34, 0.76],
-    rim: { color: 0x6a5cff, intensity: 0.9 },
-    steel: { emissive: 0x3fd6ff, intensity: 0.3 },
-    ring: { emissive: 0x2fb6dd, intensity: 0.25 },
-    glass: { color: 0x69dcff, accent: 0xb8f6ff, opacity: 0.5 },
-    water: { deep: 0x081a28, shallow: 0x123c50, glow: 0x3fa8c8 },
-    stars: 1,
-    capsule: 1.6,
-    line: 0.45,
-    cityColor: 0xd2dfe7,
-    cityEmissive: 1.0,
-    steelColor: 0x16222c,
-    ringColor: 0x1b2b36,
-    steelMetal: 0.86,
-    steelRough: 0.38,
-    coreColor: 0x0a1a26,
-    coreGlow: 0x8fe9ff,
-    deckColor: 0x0b1822,
-    deckEmissive: 0x0d3a4d,
-    deckIntensity: 0.8,
-    deckEdge: 0.9,
-    sun: 0xbfe0ff,
-    sunIntensity: 0.5,
-    plazaColor: 0x061018,
-    plazaLine: 0x2d7f96,
-    landEmissive: 0x103448,
-    landIntensity: 0.36,
-    cityLights: 0.85,
-    bridgeLights: 0.32,
-  },
-  day: {
-    exposure: 1.0,
-    bloom: { strength: 0.12, radius: 0.3, threshold: 1.05 },
-    sky: { top: 0x245f9b, mid: 0x82b4d2, bottom: 0xd2e4ee, glow: 0x6f8592 },
-    fog: { color: 0xd2e4ee, density: 0.00009 },
-    ambient: { sky: 0xd8ecf8, ground: 0x76858e, intensity: 0.85 },
-    key: { color: 0xfff1dc, intensity: 3.0 },
-    keyPos: [-380, 500, 560],
-    sunDir: [-0.33, 0.5, 0.8],
-    rim: { color: 0xe6f2fa, intensity: 1.1 },
-    steel: { emissive: 0xb6c6cd, intensity: 0.16 },
-    ring: { emissive: 0xb6c6cd, intensity: 0.1 },
-    glass: { color: 0xd6ebf6, accent: 0xffffff, opacity: 0.2 },
-    water: { deep: 0x3f7f94, shallow: 0x6fb2c2, glow: 0x8fc0cc },
-    stars: 0,
-    capsule: 0.3,
-    line: 0.26,
-    cityColor: 0xffffff,
-    cityEmissive: 0.015,
-    steelColor: 0xeef3f6,
-    ringColor: 0xd8e4ea,
-    steelMetal: 0.3,
-    steelRough: 0.52,
-    coreColor: 0x9aa6ad,
-    coreGlow: 0xe6f0f4,
-    deckColor: 0xd9e2e7,
-    deckEmissive: 0x33454f,
-    deckIntensity: 0.18,
-    deckEdge: 0.25,
-    sun: 0xfff1d6,
-    sunIntensity: 1.0,
-    plazaColor: 0x4c5f6a,
-    plazaLine: 0xcfe3ee,
-    landEmissive: 0x2e4049,
-    landIntensity: 0.42,
-    cityLights: 0,
-    bridgeLights: 0.06,
-  },
-  neon: {
-    exposure: 1.12,
-    bloom: { strength: 0.95, radius: 0.74, threshold: 0.6 },
-    sky: { top: 0x05010f, mid: 0x170628, bottom: 0x2a0a44, glow: 0x7a2bd0 },
-    fog: { color: 0x2a0a44, density: 0.00018 },
-    ambient: { sky: 0x7a5cff, ground: 0x120616, intensity: 0.7 },
-    key: { color: 0xff6bd6, intensity: 1.3 },
-    keyPos: [150, 300, -300],
-    sunDir: [0.25, 0.28, -0.92],
-    rim: { color: 0x38e8ff, intensity: 1.6 },
-    steel: { emissive: 0xff3fd0, intensity: 0.55 },
-    ring: { emissive: 0x35eaff, intensity: 0.75 },
-    glass: { color: 0xff4fd8, accent: 0x6ffbff, opacity: 0.58 },
-    water: { deep: 0x140a24, shallow: 0x2a1140, glow: 0x9a4fe0 },
-    stars: 1,
-    capsule: 1.9,
-    line: 0.5,
-    cityColor: 0xcbb6ff,
-    cityEmissive: 1.3,
-    steelColor: 0x241a2e,
-    ringColor: 0x2a1d3a,
-    steelMetal: 0.9,
-    steelRough: 0.3,
-    coreColor: 0x1a0f28,
-    coreGlow: 0xff5ce0,
-    deckColor: 0x1a0f26,
-    deckEmissive: 0x6a1e8a,
-    deckIntensity: 1.0,
-    deckEdge: 0.8,
-    sun: 0xff6bd6,
-    sunIntensity: 0.3,
-    plazaColor: 0x100420,
-    plazaLine: 0x9a3fd0,
-    landEmissive: 0x2a0c40,
-    landIntensity: 0.4,
-    cityLights: 0.95,
-    bridgeLights: 0.4,
-  },
-};
 
 let currentMode = 'night';
 const colorTween = {
@@ -723,7 +578,7 @@ function setMode(mode) {
   currentMode = mode;
 
   colorTween.from = snapshotMode();
-  colorTween.to = modeSnapshot(mode);
+  colorTween.to = weather.applyToSnapshot(modeSnapshot(mode));
   colorTween.t = 0;
   colorTween.active = true;
 
@@ -731,6 +586,21 @@ function setMode(mode) {
     b.classList.toggle('is-active', b.dataset.mode === mode);
   });
   document.body.classList.toggle('is-day', mode === 'day');
+}
+
+/* 切换天气：在当前外观模式的基础上叠加雨雾，并平滑过渡 */
+function setWeather(key) {
+  if (!WEATHER_PRESETS[key] || weather.preset === key) return;
+  weather.setPreset(key);
+
+  colorTween.from = snapshotMode();
+  colorTween.to = weather.applyToSnapshot(modeSnapshot(currentMode));
+  colorTween.t = 0;
+  colorTween.active = true;
+
+  document.querySelectorAll('.weather-btn').forEach((b) => {
+    b.classList.toggle('is-active', b.dataset.weather === key);
+  });
 }
 
 function lerpColor(target, a, b, t) {
@@ -761,6 +631,10 @@ document.querySelectorAll('.mode-btn').forEach((btn) => {
   btn.addEventListener('click', () => setMode(btn.dataset.mode));
 });
 
+document.querySelectorAll('.weather-btn').forEach((btn) => {
+  btn.addEventListener('click', () => setWeather(btn.dataset.weather));
+});
+
 const envTip = document.getElementById('envTip');
 
 document.querySelectorAll('.view-btn').forEach((btn) => {
@@ -769,6 +643,7 @@ document.querySelectorAll('.view-btn').forEach((btn) => {
       b.classList.remove('is-active')
     );
     btn.classList.add('is-active');
+    focus.clear();
     showEnvLabels = btn.dataset.view === 'orbit' || btn.dataset.view === 'city';
     showStructureLabels =
       btn.dataset.view !== 'city' && btn.dataset.view !== 'orbit';
@@ -801,6 +676,7 @@ document.querySelectorAll('.toggle').forEach((btn) => {
       labelItems.forEach((i) => (i.visible = on));
     } else if (key === 'life') {
       env.life.group.visible = on;
+      if (!on) focus.clear();
     }
   });
 });
@@ -808,6 +684,7 @@ document.querySelectorAll('.toggle').forEach((btn) => {
 // 用户手动操作时终止镜头过渡，交出控制权
 controls.addEventListener('start', () => {
   camTween = null;
+  focus.cancelFly();
 });
 
 /* ============================================================
@@ -1060,11 +937,14 @@ function animate() {
 
   controls.update();
 
-  // 相机不要钻到水面以下
-  if (camera.position.y < 12) camera.position.y = 12;
+  // 相机不要钻到水面以下（跟随时允许贴近行人和车辆）
+  const minY = focus.following ? 2.2 : 12;
+  if (camera.position.y < minY) camera.position.y = minY;
 
   tower.update(time, dt, camera);
   env.update(time, dt);
+  focus.update(time, dt);
+  weather.update(time, dt);
 
   composer.render();
   updateLabels();
@@ -1072,7 +952,7 @@ function animate() {
 
 /* ---------- 应用夜景外观，与模式定义保持一致 ---------- */
 
-applySnapshot(modeSnapshot('night'));
+applySnapshot(weather.applyToSnapshot(modeSnapshot('night')));
 
 animate();
 
@@ -1086,15 +966,16 @@ window.__CANTON__ = {
   composer,
   env,
   tower,
+  focus,
+  weather,
+  setWeather,
   flyTo,
   setMode,
+  applyWeatherNow: () => applySnapshot(weather.applyToSnapshot(modeSnapshot(currentMode))),
+  get currentMode() {
+    return currentMode;
+  },
   get time() {
     return time;
   },
-};
-window.__shot = (name = 'shot') => {
-  composer.render();
-  const data = renderer.domElement.toDataURL('image/png');
-  return fetch(`http://127.0.0.1:8124/${name}`, { method: 'POST', body: data })
-    .then((r) => r.text());
 };

@@ -214,6 +214,142 @@ html, body {
   box-shadow: 0 0 8px var(--cyan);
 }
 
+/* ---------- Weather ---------- */
+
+.weather-panel {
+  position: absolute;
+  top: 88px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 999px;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  pointer-events: auto;
+  animation: fadeUp 1.2s 0.62s both var(--ease);
+}
+
+.weather-label {
+  padding: 0 9px 0 8px;
+  font-size: 7.5px;
+  letter-spacing: 0.24em;
+  color: var(--text-faint);
+}
+
+.weather-btn {
+  padding: 6px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: color 0.3s, background 0.3s;
+}
+
+.weather-btn:hover { color: var(--text); }
+
+.weather-btn.is-active {
+  color: #04121a;
+  background: linear-gradient(180deg, #cfefff, #8fe3f8);
+  box-shadow: 0 0 16px rgba(127, 233, 255, 0.25);
+}
+
+/* ---------- Follow chip ---------- */
+
+.focus-chip {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 9px 7px 14px;
+  background: rgba(4, 14, 22, 0.62);
+  border: 1px solid rgba(127, 233, 255, 0.22);
+  border-radius: 999px;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0.35s;
+}
+
+.focus-chip.is-on {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.focus-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  animation: focusPulse 1.8s ease-in-out infinite;
+}
+
+.focus-state {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color: rgba(127, 233, 255, 0.62);
+}
+
+.focus-name {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #eafcff;
+}
+
+.focus-esc {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  padding-left: 2px;
+}
+
+.focus-exit {
+  padding: 5px 12px;
+  border: 1px solid rgba(127, 233, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(127, 233, 255, 0.08);
+  color: rgba(203, 228, 242, 0.8);
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.focus-exit:hover {
+  background: rgba(127, 233, 255, 0.2);
+  color: #fff;
+}
+
+body.is-day .focus-chip {
+  background: rgba(240, 249, 253, 0.82);
+  border-color: rgba(30, 80, 100, 0.2);
+}
+body.is-day .focus-name { color: #17313f; }
+body.is-day .focus-state { color: rgba(28, 78, 100, 0.7); }
+body.is-day .focus-esc { color: rgba(20, 55, 70, 0.45); }
+body.is-day .focus-exit {
+  border-color: rgba(30, 90, 120, 0.3);
+  background: rgba(60, 150, 190, 0.14);
+  color: rgba(14, 52, 70, 0.85);
+}
+
 /* ---------- Info card ---------- */
 
 .info-card {
@@ -880,6 +1016,11 @@ body.is-day .vignette {
   40%      { transform: translateY(3px); opacity: 0.8; }
 }
 
+@keyframes focusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.45; transform: scale(0.72); }
+}
+
 @keyframes grain {
   0%   { transform: translate(0, 0); }
   20%  { transform: translate(-4%, 3%); }
@@ -894,7 +1035,9 @@ body.is-day .vignette {
 @media (max-width: 1180px) {
   .hint { display: none; }
   .ruler { display: none; }
-  .info-card { width: 312px; }
+  /* 中等宽度下隐藏结构数据卡，避免和底部视角栏 / 开关重叠 */
+  .info-card { display: none; }
+  .views { left: 40px; transform: none; }
 }
 
 @media (max-width: 700px) {
@@ -905,6 +1048,26 @@ body.is-day .vignette {
   .mode-switch { top: 18px; right: 14px; padding: 3px; gap: 1px; }
   .mode-btn { padding: 6px 10px; font-size: 9.5px; letter-spacing: 0.06em; gap: 4px; }
   .mode-btn .dot { width: 3px; height: 3px; }
+
+  .weather-panel {
+    top: 58px;
+    right: 14px;
+    padding: 3px 4px;
+  }
+  .weather-label { display: none; }
+  .weather-btn { padding: 5px 8px; font-size: 9px; }
+
+  .focus-chip {
+    top: auto;
+    bottom: 220px;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 10px);
+    gap: 7px;
+    padding: 6px 8px 6px 11px;
+  }
+  .focus-chip.is-on { transform: translate(-50%, 0); }
+  .focus-esc { display: none; }
 
   .info-card {
     left: 14px;
