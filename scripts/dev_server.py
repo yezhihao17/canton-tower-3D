@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Tiny static dev server with cache disabled (for iterating on ES modules).
 
-Usage: python3 scripts/dev_server.py [port] [directory]
+Usage: python3 scripts/dev_server.py [port] [directory] [host]
+       host defaults to 0.0.0.0 so other devices on the LAN can connect.
 """
 import os
 import sys
@@ -20,5 +21,6 @@ class Handler(SimpleHTTPRequestHandler):
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8123
     directory = sys.argv[2] if len(sys.argv) > 2 else os.getcwd()
+    host = sys.argv[3] if len(sys.argv) > 3 else "0.0.0.0"
     handler = partial(Handler, directory=directory)
-    ThreadingHTTPServer(("127.0.0.1", port), handler).serve_forever()
+    ThreadingHTTPServer((host, port), handler).serve_forever()
