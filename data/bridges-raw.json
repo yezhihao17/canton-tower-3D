@@ -1,0 +1,902 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-20T03:54:19Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 27317865,
+  "center": {
+    "lat": 23.1162543,
+    "lon": 113.2827713
+  },
+  "nodes": [
+    299847550,
+    481252954,
+    300615933,
+    2576893710,
+    2576893696,
+    2576893680,
+    2576893683
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "lanes": "3",
+    "layer": "1",
+    "name": "海印大桥",
+    "name:en": "Haiyin Bridge",
+    "name:zh": "海印大桥",
+    "name:zh-Latn-pinyin": "hǎi yìn dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 40018843,
+  "center": {
+    "lat": 23.1090833,
+    "lon": 113.2807974
+  },
+  "nodes": [
+    5212385901,
+    4413486133
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "foot": "no",
+    "highway": "trunk",
+    "horse": "no",
+    "lanes": "3",
+    "layer": "1",
+    "name": "海印大桥",
+    "name:en": "Haiyin Bridge",
+    "name:zh": "海印大桥",
+    "name:zh-Latn-pinyin": "hǎi yìn dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 118334696,
+  "center": {
+    "lat": 23.1110953,
+    "lon": 113.3685206
+  },
+  "nodes": [
+    1330927453,
+    2479669166,
+    2479669154,
+    2479669174,
+    1199449496,
+    2479669170,
+    2479669238,
+    1199449391
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "cycleway:both": "no",
+    "highway": "trunk",
+    "lanes": "3",
+    "layer": "2",
+    "lit": "yes",
+    "maxspeed": "60",
+    "maxspeed:type": "sign",
+    "maxweight": "49",
+    "motorroad": "yes",
+    "name": "琶洲大桥",
+    "name:en": "Pazhou Bridge",
+    "name:zh": "琶洲大桥",
+    "oneway": "yes",
+    "sidewalk:left": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 210955830,
+  "center": {
+    "lat": 23.1110952,
+    "lon": 113.3686536
+  },
+  "nodes": [
+    2209833851,
+    1199449521,
+    2479669132,
+    2479669194,
+    1330927421
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "cycleway:both": "no",
+    "highway": "trunk",
+    "horse": "no",
+    "lanes": "3",
+    "layer": "2",
+    "lit": "yes",
+    "maxspeed": "60",
+    "maxspeed:type": "sign",
+    "maxweight": "49",
+    "motorroad": "yes",
+    "name": "琶洲大桥",
+    "name:en": "Pazhou Bridge",
+    "name:zh": "琶洲大桥",
+    "oneway": "yes",
+    "sidewalk:left": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 233809684,
+  "center": {
+    "lat": 23.1133326,
+    "lon": 113.3284468
+  },
+  "nodes": [
+    2048647416,
+    2048647390,
+    2048647359,
+    2421387989,
+    2421387975,
+    2421387968,
+    2421387992,
+    4386523130
+  ],
+  "tags": {
+    "bridge": "viaduct",
+    "highway": "trunk",
+    "lane_markings": "yes",
+    "lanes": "3",
+    "layer": "1",
+    "name": "猎德大桥",
+    "name:en": "Liede Bridge",
+    "name:zh": "猎德大桥",
+    "name:zh-Latn-pinyin": "liè dé dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 233809686,
+  "center": {
+    "lat": 23.1171932,
+    "lon": 113.3284392
+  },
+  "nodes": [
+    2421387983,
+    4385454300,
+    4386691572
+  ],
+  "tags": {
+    "foot": "no",
+    "highway": "trunk",
+    "lane_markings": "yes",
+    "lanes": "3",
+    "name": "猎德大桥",
+    "name:en": "Liede Bridge",
+    "name:zh": "猎德大桥",
+    "oneway": "yes",
+    "sidewalk": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 233932478,
+  "center": {
+    "lat": 23.1151512,
+    "lon": 113.3097479
+  },
+  "nodes": [
+    2422469027,
+    4453046929
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "viaduct",
+    "foot": "no",
+    "highway": "trunk",
+    "horse": "no",
+    "lanes": "3",
+    "layer": "1",
+    "name": "广州大桥",
+    "name:en": "Guangzhou Bridge",
+    "name:zh": "广州大桥",
+    "oneway": "yes",
+    "ref": "G105;G324"
+  }
+},
+{
+  "type": "way",
+  "id": 347607719,
+  "center": {
+    "lat": 23.1122162,
+    "lon": 113.2817238
+  },
+  "nodes": [
+    2576893683,
+    299847314,
+    2576893667,
+    2576893687,
+    299847531,
+    4414138538
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "lanes": "3",
+    "layer": "1",
+    "name": "海印大桥",
+    "name:en": "Haiyin Bridge",
+    "name:zh": "海印大桥",
+    "name:zh-Latn-pinyin": "hǎi yìn dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 440881637,
+  "center": {
+    "lat": 23.1173557,
+    "lon": 113.3283031
+  },
+  "nodes": [
+    4386523129,
+    4385454299,
+    2048647416
+  ],
+  "tags": {
+    "foot": "no",
+    "highway": "trunk",
+    "name": "猎德大桥",
+    "name:en": "Liede Bridge",
+    "name:zh": "猎德大桥",
+    "oneway": "yes",
+    "sidewalk": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 440897019,
+  "center": {
+    "lat": 23.1133351,
+    "lon": 113.3285532
+  },
+  "nodes": [
+    4386691571,
+    1187415538,
+    2421387988,
+    2421387976,
+    1187415334,
+    2421387983
+  ],
+  "tags": {
+    "bridge": "viaduct",
+    "highway": "trunk",
+    "lane_markings": "yes",
+    "lanes": "3",
+    "layer": "1",
+    "name": "猎德大桥",
+    "name:en": "Liede Bridge",
+    "name:zh": "猎德大桥",
+    "name:zh-Latn-pinyin": "liè dé dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 443759902,
+  "center": {
+    "lat": 23.1164705,
+    "lon": 113.2829651
+  },
+  "nodes": [
+    4412980115,
+    481252452,
+    481253083,
+    481252378
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "layer": "1",
+    "name": "海印大桥",
+    "name:en": "Haiyin Bridge",
+    "name:zh": "海印大桥",
+    "name:zh-Latn-pinyin": "hǎi yìn dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 443805253,
+  "center": {
+    "lat": 23.1124432,
+    "lon": 113.2818964
+  },
+  "nodes": [
+    4413486133,
+    481253062,
+    2576893726,
+    481253068,
+    2576893701,
+    2576893693,
+    4412980115
+  ],
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "layer": "1",
+    "name": "海印大桥",
+    "name:en": "Haiyin Bridge",
+    "name:zh": "海印大桥",
+    "name:zh-Latn-pinyin": "hǎi yìn dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 443884977,
+  "center": {
+    "lat": 23.1091115,
+    "lon": 113.2806966
+  },
+  "nodes": [
+    4414138538,
+    1331206901
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "foot": "no",
+    "highway": "trunk",
+    "horse": "no",
+    "lanes": "3",
+    "layer": "1",
+    "name": "海印大桥",
+    "name:en": "Haiyin Bridge",
+    "name:zh": "海印大桥",
+    "name:zh-Latn-pinyin": "hǎi yìn dà qiáo",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 448282335,
+  "center": {
+    "lat": 23.1134203,
+    "lon": 113.3097968
+  },
+  "nodes": [
+    4453046929,
+    383272060,
+    383272057,
+    2567590067,
+    6534818910,
+    383272056,
+    4464934467
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "viaduct",
+    "foot": "no",
+    "highway": "trunk",
+    "horse": "no",
+    "lanes": "3",
+    "layer": "1",
+    "name": "广州大桥",
+    "name:en": "Guangzhou Bridge",
+    "name:zh": "广州大桥",
+    "oneway": "yes",
+    "ref": "G105;G324"
+  }
+},
+{
+  "type": "way",
+  "id": 449547602,
+  "center": {
+    "lat": 23.1098861,
+    "lon": 113.3102679
+  },
+  "nodes": [
+    4464934467,
+    6534818909,
+    2567590079,
+    6534818908,
+    2298267173,
+    6534818907,
+    4426650401,
+    6534672842,
+    6534818906,
+    383272036,
+    6534672843,
+    4426650402,
+    6534672844,
+    383272025
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "viaduct",
+    "foot": "no",
+    "highway": "trunk",
+    "horse": "no",
+    "lanes": "3",
+    "layer": "1",
+    "name": "广州大桥",
+    "name:en": "Guangzhou Bridge",
+    "name:zh": "广州大桥",
+    "oneway": "yes",
+    "ref": "G105;G324"
+  }
+},
+{
+  "type": "way",
+  "id": 898186209,
+  "center": {
+    "lat": 23.1117223,
+    "lon": 113.3132949
+  },
+  "nodes": [
+    8347162170,
+    8347162192,
+    8347162176,
+    9444131712,
+    8347162138
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "foot": "no",
+    "handrail": "yes",
+    "highway": "steps",
+    "horse": "no",
+    "incline": "up",
+    "layer": "1",
+    "lit": "yes",
+    "motor_vehicle": "no",
+    "name": "海心桥",
+    "ramp": "no",
+    "start_date": "2021-06-25",
+    "surface": "paving_stones",
+    "wikidata": "Q106879581",
+    "wikipedia": "zh:海心桥"
+  }
+},
+{
+  "type": "way",
+  "id": 1024168459,
+  "center": {
+    "lat": 23.1111576,
+    "lon": 113.3145687
+  },
+  "nodes": [
+    8930761402,
+    9444131661,
+    8930761401,
+    8930761400,
+    9444131662,
+    9444131660,
+    9444131659,
+    8930761399,
+    9425332356,
+    9444131663,
+    8347196031,
+    9444131664,
+    9444131665,
+    8347196028,
+    9444131666,
+    9444131707,
+    9444131667,
+    9444131668,
+    9444131669,
+    9444131670,
+    9444131671,
+    9444131672,
+    9444131673,
+    9444131674,
+    9444131675,
+    9444131676,
+    9444131677,
+    9444131732,
+    9444131678,
+    9444131679,
+    9444131680,
+    9444131681,
+    9444131682,
+    9444131683,
+    9444131684,
+    9444131685,
+    9444131686,
+    9444131687,
+    8356967613
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "foot": "permit",
+    "highway": "footway",
+    "horse": "no",
+    "layer": "1",
+    "lit": "yes",
+    "motor_vehicle": "no",
+    "name": "海心桥",
+    "start_date": "2021-06-25",
+    "surface": "wood",
+    "wikidata": "Q106879581",
+    "wikipedia": "zh:海心桥"
+  }
+},
+{
+  "type": "way",
+  "id": 1024168461,
+  "center": {
+    "lat": 23.1107525,
+    "lon": 113.3137909
+  },
+  "nodes": [
+    9444131707,
+    9444131708,
+    9444131709,
+    9444131713,
+    9444131710,
+    9444131711,
+    8347162138,
+    9444131714,
+    9444131715,
+    9444131716,
+    9444131717,
+    9444131718,
+    9444131719,
+    9444131720,
+    9444131721,
+    9444131722,
+    9444131723,
+    9444131724,
+    9444131725,
+    9444131726,
+    9444131727,
+    9444131728,
+    9444131729,
+    9444131730,
+    9444131731,
+    9444131732
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "foot": "permit",
+    "highway": "footway",
+    "horse": "no",
+    "layer": "1",
+    "lit": "yes",
+    "motor_vehicle": "no",
+    "name": "海心桥",
+    "start_date": "2021-06-25",
+    "surface": "wood",
+    "wikidata": "Q106879581",
+    "wikipedia": "zh:海心桥"
+  }
+},
+{
+  "type": "way",
+  "id": 1024168462,
+  "center": {
+    "lat": 23.1098482,
+    "lon": 113.3139240
+  },
+  "nodes": [
+    9444131727,
+    9444131733,
+    9444131734,
+    9444131735
+  ],
+  "tags": {
+    "bicycle": "no",
+    "bridge": "yes",
+    "foot": "no",
+    "handrail": "yes",
+    "highway": "steps",
+    "horse": "no",
+    "incline": "down",
+    "layer": "1",
+    "lit": "yes",
+    "motor_vehicle": "no",
+    "name": "海心桥",
+    "ramp": "no",
+    "start_date": "2021-06-25",
+    "surface": "paving_stones",
+    "wikidata": "Q106879581",
+    "wikipedia": "zh:海心桥"
+  }
+},
+{
+  "type": "way",
+  "id": 1193265531,
+  "center": {
+    "lat": 23.1131824,
+    "lon": 113.3285292
+  },
+  "nodes": [
+    11076348365,
+    11076348366,
+    11076348367,
+    11076348368,
+    11076348369,
+    11076348370,
+    11076348371,
+    11076348372,
+    11076348373,
+    11076348374,
+    11076348375,
+    11076348376,
+    11076348365
+  ],
+  "tags": {
+    "bridge:structure": "cable-stayed",
+    "layer": "1",
+    "man_made": "bridge",
+    "name": "猎德大桥",
+    "name:en": "Liede Bridge",
+    "name:zh-Hans": "猎德大桥",
+    "name:zh-Hant": "獵德大橋",
+    "wikidata": "Q4179227",
+    "wikipedia": "zh:猎德大桥"
+  }
+},
+{
+  "type": "way",
+  "id": 1308645186,
+  "center": {
+    "lat": 23.1447679,
+    "lon": 113.3193852
+  },
+  "nodes": [
+    12118902433,
+    12118902434,
+    12118902435,
+    12118902436,
+    12118902433
+  ],
+  "tags": {
+    "landuse": "commercial",
+    "name": "中信广场"
+  }
+},
+{
+  "type": "way",
+  "id": 1313608031,
+  "center": {
+    "lat": 23.1121651,
+    "lon": 113.2817589
+  },
+  "nodes": [
+    12158758440,
+    12158758441,
+    12158758442,
+    12158758443,
+    12158758440
+  ],
+  "tags": {
+    "bridge": "cantilever",
+    "bridge:structure": "cable-stayed",
+    "layer": "1",
+    "man_made": "bridge",
+    "name": "海印大桥",
+    "name:en": "Haiyin Bridge",
+    "name:zh": "海印大桥",
+    "wikidata": "Q5639796",
+    "wikipedia": "zh:海印大橋"
+  }
+},
+{
+  "type": "way",
+  "id": 1313608038,
+  "center": {
+    "lat": 23.1110888,
+    "lon": 113.3143340
+  },
+  "nodes": [
+    8347196027,
+    12158758623,
+    12158758624,
+    12158758625,
+    12158758626,
+    12158758627,
+    12158758628,
+    12158758629,
+    12158758630,
+    12158758631,
+    12158758632,
+    12158758633,
+    12158758634,
+    12158758635,
+    12158758636,
+    12158758637,
+    12158758638,
+    12158758639,
+    12158758640,
+    12158758641,
+    12158758642,
+    12158758643,
+    12158758644,
+    12158758645,
+    12158758646,
+    12158758647,
+    12158758715,
+    12158758714,
+    12158758648,
+    12158758649,
+    12158758650,
+    12158758651,
+    12158758652,
+    12158758653,
+    12158758654,
+    12158758655,
+    12158758656,
+    12158758657,
+    12158758702,
+    12158758703,
+    12158758709,
+    12158758710,
+    12158758712,
+    12158758711,
+    12158758708,
+    12158758707,
+    12158758706,
+    12158758713,
+    12158758705,
+    12158758704,
+    12158758701,
+    12158758658,
+    12158758659,
+    12158758660,
+    12158758661,
+    12158758662,
+    12158758663,
+    12158758664,
+    12158758665,
+    12158758666,
+    12158758667,
+    12158758668,
+    12158758669,
+    12158758670,
+    12158758671,
+    12158758672,
+    12158758673,
+    12158758674,
+    12158758675,
+    12158758676,
+    12158758677,
+    12158758678,
+    12158758679,
+    12158758680,
+    12158758681,
+    12158758682,
+    12158758683,
+    12158758684,
+    1184781702,
+    12158758685,
+    12158758686,
+    12158758687,
+    12158758688,
+    12158758689,
+    12158758719,
+    12158758690,
+    12158758720,
+    12158758716,
+    12158758717,
+    12158758721,
+    12158758691,
+    12158758718,
+    12158758692,
+    12158758693,
+    12158758694,
+    12158758695,
+    12158758696,
+    12158758697,
+    12158758700,
+    12158758698,
+    12158758699,
+    8347196027
+  ],
+  "tags": {
+    "bridge:structure": "arch",
+    "layer": "1",
+    "man_made": "bridge",
+    "name": "海心桥",
+    "name:en": "Haixin Bridge",
+    "name:zh": "海心桥",
+    "wikidata": "Q106879581",
+    "wikipedia": "zh:海心桥"
+  }
+},
+{
+  "type": "way",
+  "id": 1313608039,
+  "center": {
+    "lat": 23.1101346,
+    "lon": 113.3459725
+  },
+  "nodes": [
+    12158758723,
+    12158758724,
+    12158758725,
+    12158758726,
+    12158758723
+  ],
+  "tags": {
+    "bridge:structure": "arch",
+    "layer": "1",
+    "man_made": "bridge",
+    "name": "华南大桥",
+    "name:en": "Hua'nan Bridge",
+    "name:zh": "华南大桥",
+    "name:zh-Hans": "华南大桥",
+    "wikidata": "Q10905542",
+    "wikipedia": "zh:华南大桥"
+  }
+},
+{
+  "type": "way",
+  "id": 1313608040,
+  "center": {
+    "lat": 23.1103352,
+    "lon": 113.3685653
+  },
+  "nodes": [
+    12158758727,
+    12158758728,
+    12158758729,
+    12158758730,
+    12158758727
+  ],
+  "tags": {
+    "bridge:structure": "humpback",
+    "layer": "1",
+    "man_made": "bridge",
+    "name": "琶洲大桥",
+    "name:en": "Pazhou Bridge",
+    "name:zh": "琶洲大桥",
+    "wikidata": "Q7156999",
+    "wikipedia": "zh:琶洲大桥"
+  }
+},
+{
+  "type": "relation",
+  "id": 18913832,
+  "center": {
+    "lat": 23.1116164,
+    "lon": 113.3103092
+  },
+  "members": [
+    {
+      "type": "way",
+      "ref": 1372988692,
+      "role": "outer"
+    },
+    {
+      "type": "way",
+      "ref": 1367754398,
+      "role": "outer"
+    }
+  ],
+  "tags": {
+    "layer": "1",
+    "man_made": "bridge",
+    "name": "广州大桥",
+    "name:en": "Guangzhou Bridge",
+    "type": "multipolygon",
+    "wikidata": "Q4846014",
+    "wikipedia": "zh:广州大桥 (广州)"
+  }
+}
+
+  ]
+}

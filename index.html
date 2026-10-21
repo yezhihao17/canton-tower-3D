@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>广州塔 · Canton Tower | 3D 交互展示</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="css/style.css?v=15" />
+<script>window.__errors = []; addEventListener('error', (e) => window.__errors.push(`${e.message} @ ${e.filename}:${e.lineno}`)); addEventListener('unhandledrejection', (e) => window.__errors.push(String(e.reason)));</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three/three.module.js",
+    "three/addons/": "./vendor/three/addons/"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="app"></div>
+<div id="labels" class="label-layer"></div>
+
+<!-- ================= HUD ================= -->
+<div class="hud">
+
+  <header class="brand">
+    <span class="brand-mark"></span>
+    <div>
+      <h1>广州塔</h1>
+      <p>CANTON TOWER <span>/</span> GUANGZHOU <span>/</span> 23.1090° N 113.3192° E</p>
+    </div>
+  </header>
+
+  <!-- 高度标尺 -->
+  <div class="ruler" aria-hidden="true">
+    <div class="ruler-line"></div>
+    <div class="ruler-ticks" id="rulerTicks"></div>
+    <div class="ruler-glow"></div>
+  </div>
+
+  <!-- 右上角：外观模式 -->
+  <div class="mode-switch" id="modeSwitch">
+    <button class="mode-btn is-active" data-mode="night"><span class="dot"></span>夜景</button>
+    <button class="mode-btn" data-mode="day"><span class="dot"></span>白昼</button>
+    <button class="mode-btn" data-mode="neon"><span class="dot"></span>霓虹</button>
+  </div>
+
+  <!-- 左下：数据卡 -->
+  <section class="info-card">
+    <div class="info-head">
+      <span class="info-eyebrow">STRUCTURE DATA</span>
+      <span class="info-code">GZ·CT—600</span>
+    </div>
+    <div class="info-grid">
+      <div class="stat">
+        <span class="stat-val"><span class="stat-num" data-count="600">0</span><i>m</i></span>
+        <span class="stat-label">建筑总高</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val"><span class="stat-num" data-count="454">0</span><i>m</i></span>
+        <span class="stat-label">主体高度</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val"><span class="stat-num" data-count="24">0</span><i>根</i></span>
+        <span class="stat-label">钢柱数量</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val"><span class="stat-num" data-count="112">0</span><i>层</i></span>
+        <span class="stat-label">楼层数</span>
+      </div>
+    </div>
+    <p class="info-desc">
+      双曲面钢结构，24 根钢柱沿椭圆截面扭转上升，于 280 米处收束成纤细腰身，
+      再向顶部舒展。塔身由 5 万吨钢材编织而成，是中国第一高塔。
+    </p>
+    <div class="info-tags">
+      <span>HYPERBOLOID</span><span>TWISTED LATTICE</span><span>600 M</span>
+    </div>
+  </section>
+
+  <!-- 底部中间：视角 -->
+  <nav class="views" id="views">
+    <span class="views-label">VIEW</span>
+    <button class="view-btn is-active" data-view="hero">全景</button>
+    <button class="view-btn" data-view="waist">塔身</button>
+    <button class="view-btn" data-view="deck">观景台</button>
+    <button class="view-btn" data-view="top">塔顶</button>
+    <button class="view-btn" data-view="orbit" title="珠江 · 海心沙 · 双塔">江景</button>
+    <button class="view-btn" data-view="city" title="珠江新城 · 中轴线 · 天际线">新城</button>
+  </nav>
+
+  <div class="env-tip" id="envTip">
+    <span class="env-tip-dot"></span>
+    点击「江景」或「新城」查看珠江、车流与城市天际线
+  </div>
+
+  <!-- 右下：开关 -->
+  <div class="toggles">
+    <button class="toggle is-on" data-toggle="rotate"><span class="switch"></span>自动旋转</button>
+    <button class="toggle is-on" data-toggle="shell"><span class="switch"></span>玻璃幕墙</button>
+    <button class="toggle is-on" data-toggle="labels"><span class="switch"></span>结构标注</button>
+    <button class="toggle is-on" data-toggle="life"><span class="switch"></span>城市动态</button>
+  </div>
+
+  <div class="hint">
+    <span class="mouse"></span>
+    拖拽旋转 · 滚轮缩放 · 右键平移
+  </div>
+
+  <div class="credit">
+    地理数据 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap 贡献者</a> · ODbL
+  </div>
+
+</div>
+
+<!-- ================= Loading ================= -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-ring">
+      <svg viewBox="0 0 120 120">
+        <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+        <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="54"></circle>
+      </svg>
+      <span class="loader-pct" id="loaderPct">0</span>
+    </div>
+    <div class="loader-title">CANTON TOWER</div>
+    <div class="loader-sub" id="loaderSub">正在构建双曲面几何结构</div>
+    <div class="loader-bar"><i id="loaderBar"></i></div>
+  </div>
+</div>
+
+<div class="vignette"></div>
+<div class="grain"></div>
+
+<script type="module" src="js/main.js?v=16"></script>
+</body>
+</html>

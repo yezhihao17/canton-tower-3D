@@ -1,0 +1,402 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-20T03:46:05Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 5078787516,
+  "lat": 23.1090494,
+  "lon": 113.3179299,
+  "tags": {
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁集团有限公司",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "309",
+    "start_date": "2005-12-26",
+    "subway": "yes",
+    "wikidata": "Q5097203",
+    "wikipedia": "zh:广州塔站 (地铁)"
+  }
+},
+{
+  "type": "node",
+  "id": 5078787517,
+  "lat": 23.1090407,
+  "lon": 113.3180431,
+  "tags": {
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁集团有限公司",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "309",
+    "start_date": "2005-12-26",
+    "subway": "yes",
+    "wikidata": "Q5097203",
+    "wikipedia": "zh:广州塔站 (地铁)"
+  }
+},
+{
+  "type": "node",
+  "id": 5594226424,
+  "lat": 23.1090463,
+  "lon": 113.3179853,
+  "tags": {
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "old_name:2005-2013": "赤岗塔",
+    "operator": "广州地铁运营集团有限公司",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "309",
+    "start_date": "2005-12-26",
+    "station": "subway",
+    "subway": "yes",
+    "wheelchair": "yes",
+    "wikidata": "Q5097203",
+    "wikipedia": "zh:广州塔站 (地铁)"
+  }
+},
+{
+  "type": "node",
+  "id": 5861155428,
+  "lat": 23.1093065,
+  "lon": 113.3183998,
+  "tags": {
+    "light_rail": "yes",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁运营集团有限公司",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "APM01",
+    "start_date": "2010-11-28"
+  }
+},
+{
+  "type": "node",
+  "id": 5861155433,
+  "lat": 23.1091769,
+  "lon": 113.3182934,
+  "tags": {
+    "light_rail": "yes",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁运营集团有限公司",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "APM01",
+    "start_date": "2010-11-28"
+  }
+},
+{
+  "type": "node",
+  "id": 6490092420,
+  "lat": 23.1092407,
+  "lon": 113.3183475,
+  "tags": {
+    "light_rail": "yes",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "old_name:2010-2013": "赤岗塔",
+    "operator": "广州地铁运营集团有限公司",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "APM01",
+    "start_date": "2010-11-28",
+    "station": "light_rail",
+    "wikidata": "Q5097203",
+    "wikipedia": "zh:广州塔站 (地铁)"
+  }
+},
+{
+  "type": "node",
+  "id": 12990256555,
+  "lat": 23.1100694,
+  "lon": 113.3214618,
+  "tags": {
+    "light_rail": "yes",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "old_name": "广州塔东",
+    "old_name:en:2014-2024": "Canton Tower East",
+    "old_name:zh:2014-2024": "广州塔东",
+    "old_start_date": "2024-12-31",
+    "operator": "广州有轨电车有限责任公司",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "THZ101",
+    "start_date": "2025-07-01",
+    "station": "light_rail",
+    "wheelchair": "yes",
+    "wikidata": "Q18699095",
+    "wikipedia": "zh:广州塔站 (有轨电车)"
+  }
+},
+{
+  "type": "node",
+  "id": 12990256556,
+  "lat": 23.1100732,
+  "lon": 113.3216814,
+  "tags": {
+    "light_rail": "yes",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "old_name": "广州塔东",
+    "old_name:en:2014-2024": "Canton Tower East",
+    "old_name:zh:2014-2024": "广州塔东",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "THZ101",
+    "station": "light_rail"
+  }
+},
+{
+  "type": "node",
+  "id": 12990256557,
+  "lat": 23.1100407,
+  "lon": 113.3216802,
+  "tags": {
+    "light_rail": "yes",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "old_name": "广州塔东",
+    "old_name:en:2014-2024": "Canton Tower East",
+    "old_name:zh:2014-2024": "广州塔东",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "THZ101",
+    "station": "light_rail"
+  }
+},
+{
+  "type": "node",
+  "id": 13849998003,
+  "lat": 23.1100519,
+  "lon": 113.3214702,
+  "tags": {
+    "light_rail": "yes",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "public_transport": "stop_position",
+    "railway": "stop",
+    "ref": "THZ101",
+    "station": "light_rail"
+  }
+},
+{
+  "type": "way",
+  "id": 521222276,
+  "center": {
+    "lat": 23.1090461,
+    "lon": 113.3179854
+  },
+  "tags": {
+    "building": "trn",
+    "layer": "-1",
+    "level": "-1",
+    "location": "surface",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁集团有限公司",
+    "start_date": "2005-12-26",
+    "wikidata": "Q5097203",
+    "wikimedia_commons": "Category:Canton Tower Station (Metro)",
+    "wikipedia": "zh:广州塔站 (地铁)"
+  }
+},
+{
+  "type": "way",
+  "id": 584204634,
+  "center": {
+    "lat": 23.1090162,
+    "lon": 113.3191506
+  },
+  "tags": {
+    "addr:city": "广州市",
+    "addr:country": "CN",
+    "addr:district": "海珠区",
+    "addr:street": "阅江西路",
+    "alt_name": "广州新电视塔;小蛮腰",
+    "alt_name:ja": "広州タワー",
+    "alt_name:zh-Hant": "廣州新電視塔;小蠻腰",
+    "building": "yes",
+    "building:levels": "37",
+    "building:levels:underground": "2",
+    "communication:microwave": "yes",
+    "communication:radio": "yes",
+    "communication:television": "yes",
+    "layer": "1",
+    "man_made": "tower",
+    "name": "广州塔",
+    "name:ar": "برج كانتون",
+    "name:en": "Canton Tower",
+    "name:es": "Torre de televisión de Cantón",
+    "name:fr": "Canton Tour",
+    "name:hi": "केन्तोन टवर",
+    "name:id": "Menara Kanton",
+    "name:it": "Torre di Canton",
+    "name:ja": "広州塔",
+    "name:ja-Hira": "こうしゅうとう",
+    "name:ko": "광저우 타워",
+    "name:ml": "കാൻടൺ ടവർ",
+    "name:ms": "Menara Canton",
+    "name:pt": "Torre de televisão de Cantão",
+    "name:ru": "Телебашня Гуанчжоу",
+    "name:vi": "Tháp Quảng Châu",
+    "name:yue": "广州塔",
+    "name:yue-Latn": "Gwongzau Taap",
+    "name:zh": "广州塔",
+    "name:zh-Hans": "广州塔",
+    "name:zh-Hant": "廣州塔",
+    "name:zh-Latn-pinyin": "Guǎngzhōu tǎ",
+    "old_name": "广州电视观光塔",
+    "old_name:en": "Guangzhou TV & Sightseeing Tower",
+    "roof:shape": "many",
+    "start_date": "2010-9-28",
+    "tower:construction": "freestanding",
+    "tower:type": "communication",
+    "website": "https://www.cantontower.com",
+    "wikidata": "Q168400",
+    "wikimedia_commons": "Category:Canton Tower",
+    "wikipedia": "zh:广州塔",
+    "wikipedia:en": "Canton Tower"
+  }
+},
+{
+  "type": "way",
+  "id": 620358651,
+  "center": {
+    "lat": 23.1092415,
+    "lon": 113.3183466
+  },
+  "tags": {
+    "building": "train_station",
+    "layer": "-1",
+    "level": "-1",
+    "location": "surface",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁集团有限公司",
+    "start_date": "2010-11-28",
+    "wikidata": "Q5097203",
+    "wikimedia_commons": "Category:Canton Tower Station (Metro)",
+    "wikipedia": "zh:广州塔站 (地铁)"
+  }
+},
+{
+  "type": "relation",
+  "id": 3987167,
+  "center": {
+    "lat": 23.1089880,
+    "lon": 113.3177927
+  },
+  "tags": {
+    "description": "Metro line 3 station",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁运营集团有限公司",
+    "public_transport": "stop_area",
+    "type": "public_transport",
+    "wikidata": "Q5097203",
+    "wikipedia": "zh:广州塔站 (地铁)"
+  }
+},
+{
+  "type": "relation",
+  "id": 9611406,
+  "center": {
+    "lat": 23.1089531,
+    "lon": 113.3179540
+  },
+  "tags": {
+    "description": "APM station",
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州地铁运营集团有限公司",
+    "public_transport": "stop_area",
+    "type": "public_transport"
+  }
+},
+{
+  "type": "relation",
+  "id": 12833842,
+  "center": {
+    "lat": 23.1090162,
+    "lon": 113.3191506
+  },
+  "tags": {
+    "alt_name": "广州新电视塔;小蛮腰",
+    "alt_name:ja": "広州タワー",
+    "alt_name:zh-Hant": "廣州新電視塔;小蠻腰",
+    "name": "广州塔",
+    "name:ar": "برج كانتون",
+    "name:en": "Canton Tower",
+    "name:es": "Torre de televisión de Cantón",
+    "name:fr": "Canton Tour",
+    "name:hi": "केन्तोन टवर",
+    "name:id": "Menara Kanton",
+    "name:it": "Torre di Canton",
+    "name:ja": "広州塔",
+    "name:ja-Hira": "こうしゅうとう",
+    "name:ko": "광저우 타워",
+    "name:ml": "കാൻടൺ ടവർ",
+    "name:ms": "Menara Canton",
+    "name:pt": "Torre de televisão de Cantão",
+    "name:ro": "Turnul de televiziune din Guangzhou",
+    "name:ru": "Телебашня Гуанчжоу",
+    "name:vi": "Tháp Quảng Châu",
+    "name:yue": "广州塔",
+    "name:yue-Latn": "Gwongzau Taap",
+    "name:zh": "广州塔",
+    "name:zh-Hans": "广州塔",
+    "name:zh-Hant": "廣州塔",
+    "name:zh-Latn-pinyin": "Guǎngzhōu tǎ",
+    "old_name": "广州电视观光塔",
+    "old_name:en": "Guangzhou TV & Sightseeing Tower",
+    "type": "building",
+    "wikidata": "Q168400",
+    "wikipedia": "zh:广州塔",
+    "wikipedia:en": "Canton Tower"
+  }
+},
+{
+  "type": "relation",
+  "id": 19381265,
+  "center": {
+    "lat": 23.1100471,
+    "lon": 113.3216137
+  },
+  "tags": {
+    "name": "广州塔",
+    "name:en": "Canton Tower",
+    "name:zh": "广州塔",
+    "operator": "广州有轨电车有限责任公司",
+    "public_transport": "stop_area",
+    "type": "public_transport"
+  }
+}
+
+  ]
+}
